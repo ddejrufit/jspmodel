@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input2.html</title>
+</head>
+<body>
+	<form action="Output" method="post"> <!-- a태그는 post방식 요청 불가능! -->
+	<!-- 이름을 입력받고 button을 클릭하면 -->
+	이름: <input name="name"><p>
+	<hr>
+	<button>출력</button><p>
+	<input type="submit" value="이게 기본임"><p>
+	<imput type="reset">
+	</form>
+	<!-- 
+		form 속에 있는
+			원래 : <imput type="submit">을 누르면 action 속에 언급한 쪽으로 넘김(요청)
+			바뀜 : 버튼 모양인거 아무거나 눌러도 action 속에 언급한 쪽으로 넘김(요청)
+					ㄴ <input type="reset">만 빼고
+	 -->
+</body>
+</html>

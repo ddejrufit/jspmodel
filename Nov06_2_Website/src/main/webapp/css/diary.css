@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* diary.css */
+
+#diaryTbl{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	width: 990px;
+	background-color: #6B66FF;
+	font-size: 20pt;
+	border-spacing: 2px /*table과 td사이의 간격*/
+}
+
+#diaryTbl .dataTr{
+	background-color: white;
+	color: #6B66FF;
+	height: 30px;
+	cursor: pointer;
+}
+
+#diaryTbl td:hover{
+	background-color: #6B66FF;
+	color: white;
+}

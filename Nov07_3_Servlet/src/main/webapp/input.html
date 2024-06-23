@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input.html</title>
+<link rel="stylesheet" href="css/input.css">
+</head>
+<body>
+	<!-- 
+		회원가입 페이지
+		ID
+		PW
+		성별(하나만 선택 가능)>
+		지역
+			<select>
+				<option>서울</option>
+				<option>인천</option>
+				<option>경기</option>
+			</select>
+		취미 (복수선택) >
+		자기소개 <textarea>
+		가입버튼을 누르면 -> 내가 입력한 정보들이 새로운 페이지에서 출력되게 (OustPut.java) + css
+	 -->
+	<form action="Output" method="post">
+		<table id="joinTbl">
+			<tr>
+				<th colspan="2" id="joinTh">회원가입</th>
+			</tr>
+			<tr>
+			<td align="center" class="td1">ID</td>
+			<td>
+				<input name="ID" autofocus="autofocus" autocomplete="off"
+				placeholder="필수, 4~8자 " maxlength="8" class="textType">
+			</td>
+			</tr>
+			<tr>
+				<td align="center" class="td1">PW</td>
+				<td>
+				<input name="PW" type="password" autocomplete="off"
+				placeholder="필수, 영문/숫자 혼합 "  class="textType">
+				</td>		
+			</tr>
+			<tr>
+			<td align="center" class="td1">성별</td>
+				<td class="radioTd">
+					<input type="radio"name="gd" value="남자" checked="checked"> 남자
+					<input type="radio"name="gd" value="여자"> 여자
+	 			</td>
+			</tr>	
+			<tr>
+			<td align="center" class="td1">지역</td>
+			<td>
+				<select name="lc"  class="radioTd1">
+					<option class="test">서울</option>
+					<option class="test">인천</option>
+					<option class="test">경기</option>
+					<option class="test">부산</option>
+					<option class="test">전주</option>
+					<option class="test">제주</option>
+				</select>
+			</td>
+			</tr>
+			<tr>
+			<td align="center" class="td1">취미</td>
+			<td>
+				<table id="checkboxTbl">
+					<tr>
+					<td><input type="checkbox" value="게임" name="hb">게임</td>
+					<td><input type="checkbox" value="운동" name="hb">운동</td>
+					<td><input type="checkbox" value="골프" name="hb">골프</td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" value="독서" name="hb">독서</td>
+					<td><input type="checkbox" value="악기" name="hb">악기</td>
+					<td><input type="checkbox" value="맛집" name="hb">맛집</td>
+					</tr>
+				</table>		
+			</td>
+			</tr>
+			<tr>
+			<td align="center" class="td1">자기소개</td>
+			<td><textarea name="itd"></textarea></td>
+			</tr>
+			<tr>
+			<td colspan="2" align="center"><button >가입</button></td>
+			</tr>
+		</table>
+	 </form>
+
+</body>
+
+</html>

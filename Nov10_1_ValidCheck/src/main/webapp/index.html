@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+<script type="text/javascript" src="KangvalidChecker.js"></script>
+<script type="text/javascript">
+	function checkValid(){
+		//			document.form이름.inout이름;
+		let idBox = document.ff.id;
+		let pwBox = document.ff.pw;
+		let pwChkBox = document.ff.pwChk;
+		let footBox = document.ff.foot;
+		let photoBox = document.ff.photo;
+		//alert(idBox.value)
+		
+		if (isEmpty(idBox) || atLeastLetter(idBox, 5) || containsAnother(idBox)) {
+			alert('please fill in your ID Properly.')
+			idBox.Value="";
+			idBox.focus();
+			return false;
+		} else if (isEmpty(pwBox)
+				|| atLeastLetter(pwBox, 5) 
+				|| notEqualPw(pwBox, pwChkBox) 
+				|| notContains(pwBox, "1234567890")
+				|| notContains(pwBox, "abcdefghijklmnopqrstuvwxyz")
+				|| notContains(pwBox, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+				|| notContains(pwBox, "!@#$%^&*()_<>")){
+			alert('please fill in your PW Properly.')
+			pwBOX.value ="";
+			pwBox.focus();
+			return false;
+		}else if (isEmpty(pwCkhBox)
+				|| atLeastLetter(footBox, 3)
+				|| isNotNumber(footBox)){
+			alert('please fill in your foot Properly.')
+			footBox.value="";
+			footBox.focus();
+			return false;
+		}else if(isEmpty(photoBox)
+				|| (isNotType(photoBox, 'gif')
+					&& isNotType(photoBox, 'png')
+					&& isNotType(photoBox, 'jpg'))){
+			alert('please fill in your photo Properly.')
+			photoBox.value="";
+			return false;
+		}
+	
+		
+		// 사진 : 필수, gif/png/jpg아니면 안됨
+		
+		
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form action ="ㅋㅋㅋㅋ" name="ff" onsubmit="return checkValid();">
+	ID : <input name ="id" maxlength="10" autocomplete="off"
+	autofocus="autofocus" placeholder="필수, 5~10 글자, 한글/특문X"><br>
+	PW:<input name ="pw" maxlength="10" type="password"><br>
+	PW확인 : <input name ="pwChk" maxlength="10" type="password"><br>
+	발사이즈 : <input name ="foot" maxlength="3"><br>
+	사진 : <input name="photo" type="file"><br><hr>
+	<button>확인</button>
+	</form>
+	<!-- 
+		<form> + <button>
+		ID PW PWChk 발사이즈 사진
+	 -->
+</body>
+</html>
