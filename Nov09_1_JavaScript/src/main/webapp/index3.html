@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index3.html</title>
+<script type="text/javascript">
+function asdf(){
+		// input에 쓴 내용 button 클릭하면 console.log에 나오게
+		let aaInput = documanet.getElementById('aa');
+		//console.log(aaInput.value);
+		// indexOf로 내가 찾는 글자가 있으면 : 해당하는 글자의 위치를 알려줌(index는 0부터 시작)
+		// indexOf로 내가 찾는 글자가 없으면 : -1
+		console.log(aaInput.value.indexOf('a'));
+}
+</script>
+</head>
+<body>
+	<input id="aa">
+	<button onclick="asdf();">고</button>
+</body>
+</html>

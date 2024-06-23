@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>V1.html</title>
+<script type="text/javascript" src="KangvalidChecker.js"></script>
+<script type="text/javascript"src="M2.js"></script>
+</head>
+<body>
+<!-- 
+	View : html / jsp
+		ㄴ 실제 사용자가 보는 페이지 + 입력 + 출력
+		ㄴ 모든 요청은 다시 C 쪽으로!
+ -->
+
+<h1>V1.html</h1>
+	<form action="C" name="ff" onsubmit="return check();" method="post">
+		x: <input name="x"><p>
+		y: <input name="y"><p>
+		<button>계산</button>
+	</form>
+	<!-- 
+		유효성 검사로 x,y값 필수로 넣게 하고 숫자만 가능하게 하고
+		이 조건들을 만족하지 않으면 C로 애초에 못가게
+		JS -> M2.js
+ 	-->
+</body>
+</html>

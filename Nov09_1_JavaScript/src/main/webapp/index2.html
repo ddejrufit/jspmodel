@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index2.html</title>
+<script type="text/javascript">
+	function goHaha(){
+		//1. 변수에 input에 쓰인 내용을 담기
+		// document : 이 html 문서 자체
+		let iiInput = documanet.getElementById("ii"); // id가 ii인것
+		//alert(iiInput); // [object HTMLInputElement]
+		let iiInputVal = iiInput.value; // input에 입력한 내용이 보임
+		//alert(iiInputVal);
+		location.href="ㅋㅋㅋ?ii=" + iiInputVal;
+		//
+	}
+</script>
+</head>
+<body>
+	<input id="ii">
+	<!--  <button onclick="goHaha();">확인</button>-->
+	<button ondblclick="goHaha();">확인</button>
+	<!-- 
+		input에 값 넣어서
+		button 더블 클릭하면 ㅋㅋㅋ?ii=hi로 GET방식 요청
+		<form> : 입력받아서 요청할 때 필수품 X
+		<form> : 입력받아서 요청할 때 편함 O
+		
+		주소입력 : GET
+		<a> : GET
+		<form> + <button> : GET / POST
+		JavaScript : GET
+	 -->
+</body>
+</html>

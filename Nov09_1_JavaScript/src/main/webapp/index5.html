@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>유효성검사</title>
+<script type="text/javascript">
+	function checkValid(){
+		// input의  내용을 받아와야
+		// document.form이름.input이름
+		let idInput = document.ff.idid;
+		let pwInput = document.ff.pwpw;
+		let pwChkInput = document.ff.pwChk;
+		let footInput = document.ff.foot;
+		
+		//alert(idInput.value); //잘 받아와지는지 내용 확인
+		// ID는 필수, 최소 2글자~ 최대 10글자
+		if(!idInput.value){
+			alert('ID를 입력해주세요');
+			idInput.focus();//커서 idInput에 갖다놓기
+			return false;
+		}else if (idInput.value.length <=1){
+		alert('ID는 2 ~ 10글자');
+		idInput.focus();
+		idInput.value="";// 기존에 썻던거 지우기
+		return false;
+		
+		}	// PW는 필수, 최소 5글자~ 최대 10글자
+		if(!pwInput.value){
+			alert('pw안씀')
+			pwInput.focus();
+			return false;
+		}else if (pwInput.value.length <5){
+			alert('pw는 5글자 ~ 10글자')
+			pwInput.focus();
+			pwInput.value="";
+			return false;
+		}
+		// PWChk는 필수, 최소 5글자~ 최대 10글자 
+		if (!pwChkInput.value||pwChkInput.value.lengyh < 5){
+			alert('pw와 pw확인이 다르거나 5글자 미만입니다');
+			pwChkInput.focus();
+			pwChkInput.value="";
+			return false;
+		}
+	
+		// PW와 동일한지
+		if(pwInput.value !== pwChkInput.value){
+			alert('비번 다른데여?')
+			pwInput.focus()
+			pwInput.value ="";
+			return false;
+		}
+		
+		// pw에 3, 6, 9 중에 하나 이상 / h, k 중에 하나 이상 들어갔으면...
+		let numExist = false; // 숫자가 있는지 체크용
+		let num = "369"; // 이 중에 하나 이상 있어라~
+		
+		for(var i = 0; i < num.length; i++){
+			if(pwInput.value.indexOf(num[i])!==-1){//369중 하나 들어있으면
+				numExist = true;
+				break;//break로 반복문 빠져나오기
+			}
+		}
+		
+		let letterExist = false;
+		let letter = "hk";
+		for (var i = 0; i < letter.length; i++) {
+			if (pwInput.value.indexOf(letter[i])!==-1) {
+				letterExist =true;
+				break;
+			}
+		}
+		//  letterExist가 false면 아래 if문에 걸림(조건 충족이 안되었기 때문에)
+		//	letterExist가 true면 아래 if문에 안걸림(조건 충족했기 때문에)
+		
+		// 두조건이 모두 만족하면 true
+		// 아래 if문에서 !true =false -> is(false) << 조건식 안돌아감(if문에 걸리지 않는다)
+		if (!numExist||!letterExist) {
+			alert('있어야 할 게 없습니다.')
+			return false;
+		}
+
+		// 발치수 필수, 숫자여야만 (245)
+		if(isNaN(footInput.value)){
+			alert('숫자만 쓰세요');
+			footInput.focus();
+			footInput.value="";
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+<!-- 
+	onsubmit : 요청하러 출발해라
+	return true : 개발자 의도되로 됐을 때
+	return false: 조건에 걸려서 요청 X
+ -->
+	<form action="ㅋㅋㅋㅋㅋ"  name="ff" onsubmit="return checkValid();">
+	ID :<input name="idid"  maxlength="10" autofocus="autofocus" placeholder="ID"><p>
+	PW : <input name="pwpw" maxlength="10"  type="password" placeholder="PW"><p>
+	PW확인 : <input name="wpChk"  maxlength="10"  type="password" placeholder="PW확인"><p>
+	발사이즈 :  <input name="foot" placeholder="발사이즈"><p>
+	 <button>입력완료</button>
+	<!-- 
+		유효성 검사: javascipt로 검사해서 개발자가 원하는 대로 쓰지 않으면
+				
+		
+		<form>안에
+		ID / PW/ PW확인/ 발사이즈 입력받는 칸(input) / 버튼
+	 -->
+	
+	 
+	 
+	  
+	   
+	
+</body>
+</html>

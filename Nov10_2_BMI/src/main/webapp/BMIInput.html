@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BMIInput.html</title>
+<link rel="stylesheet" href="BMIInput.css">
+<script type="text/javascript" src="KangvalidChecker.js"></script>
+<script type="text/javascript" src="Nov10_check.js"></script>
+</head>
+<body>
+<form action="BMIOutput.jsp" name="bmiForm" enctype="multipart/form-data" method="post" onsubmit="return bmiCheck();">
+	<table id="bmiTbl">
+	<tr><th colspan="2">BMI검사</th></tr>
+	<tr>
+		<td align="center">이름</td>
+		<td><input name="name" placeholder="필수" maxlength="10"
+		autofocus="autofocus" autocomplete="off" class="textType"></td>
+	<tr>
+	<td align="center">키</td>
+	<td><input name="height" placeholder="cm" 
+		autocomplete="off" class="textType"></td>
+	</tr>
+	<tr>
+		<td align="center">몸무게</td>
+		<td><input name="weight" placeholder="kg" 
+		autocomplete="off" class="textType"></td>
+	</tr>
+	<tr>
+		<td align="center">사진</td>
+		<td><input name="photo" type="file" class="textType"></td>
+	</tr>
+	<tr><td colspan="2" align="center"><button>계산하기</button></td></tr>
+	</table>
+	</form>
+	<!-- 
+		BMIInput.html에서 BMI 검사하는데 필요한
+		이름, 키, 몸무게, 사진 을 <form>안의 <table>로 작성해서 + 유효성검사 +css
+		
+		계산하기 버튼을 누르면 -> Servlet(Output.java) 쪽으로 넘어가서
+		결과 화면이 보이게
+	 -->
+</body>
+</html>
